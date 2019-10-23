@@ -15,29 +15,43 @@ int main(void){
 
     createBuddyList();
     printBuddyList();
-
-    long addr1,addr2,addr3;
+	
+    long addr1;
     addr1 = getSpace(1000);
+    printf("\n\n========================================================\n\n");
     printf("Test 1: got %ld\n", addr1);
+    printBuddyList();
+    printf("\n\n========================================================\n\n");
 
-    // addr2 = getSpace(500);
+    long addr2;
+    addr2 = getSpace(500);
+    printf("\n\n========================================================\n\n");
     printf("Test 2: got %ld\n", addr2);
+    printBuddyList();
+    printf("\n\n========================================================\n\n");
 
-    // addr3 = getSpace(1500);
+    long addr3;
+    addr3 = getSpace(1500);
+    printf("\n\n========================================================\n\n");
     printf("Test 3: got %ld\n", addr3);
     printBuddyList();
+    printf("\n\n========================================================\n\n");
 
 
     // printf("Test 4: resetting allocator\n");
     // resetBuddyList();
     // printBuddyList();
 
-    printf("Test 5: freeSpace() all");
+    printf("\n\n========================================================\n\n");
+    printf("Test 5: freeSpace() all\n");
     freeSpace(addr3);
     freeSpace(addr2);
     freeSpace(addr1);
     printBuddyList();
-
+    printf("\n\n========================================================\n\n");
+    
+    
+    printf("\n\n========================================================\n\n");
     printf("Test 6: freeSpace() some");
     addr1 = getSpace(1000);
     addr2 = getSpace(500);
@@ -45,5 +59,6 @@ int main(void){
     freeSpace(addr3);
     freeSpace(addr1);
     printBuddyList();
+    printf("\n\n========================================================\n\n");
 
 }

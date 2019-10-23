@@ -104,6 +104,8 @@ long splitBlock (long index) {
     if(bl[index].freeCount > 0){
         // take a block off and return it
         bl[index].freeCount -= 1;
+	bl[index].allocatedList[bl[index].allocatedCount] = bl[index].freeList[bl[index].freeCount];
+	bl[index].allocatedCount += 1;  
         return bl[index].freeList[bl[index].freeCount];
     }
     else {
@@ -134,7 +136,7 @@ long freeSpace(long addr){
 
     // to compute the address we compute which 
 
-    int i = NUMSIZES - 1;
+    int i = NUMSIZES;
     int notdone = 1;
 
     // checking sizes
