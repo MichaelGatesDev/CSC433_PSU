@@ -46,16 +46,18 @@ void *cons_fn(void *arg){
 
 void main(){
 
+    // allocate size of buffer
      buffer = (int*) malloc(MAXSIZE * sizeof(int));
 
-     int i;
-     for (i = 0; i < MAXSIZE; i++)
-     {
-         buffer[i] = 0;
-     }
-     size = 0;
-     head = 0;
-     tail = 0;
+    // set all buffer values to 0
+    int i;
+    for (i = 0; i < MAXSIZE; i++)
+    {
+        buffer[i] = 0;
+    }
+    size = 0;
+    head = 0;
+    tail = 0;
 
      
     // create threads 
